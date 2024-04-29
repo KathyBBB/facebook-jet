@@ -67,12 +67,12 @@ const submit = () => {
                 </div>
 
                 <div class="flex items-center justify-center mt-4">
-                  
+
 
                     <PrimaryButton class="ms-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
                         Log in
                     </PrimaryButton>
-                   
+
                 </div>
                 <div class="flex items-center justify-between mt-4">
                     <Link :href="route('register')"
@@ -80,7 +80,7 @@ const submit = () => {
                     Need an account?
                     </Link>
 
-                   
+
                     <Link v-if="canResetPassword" :href="route('password.request')"
                         class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ogblue-500">
                     Forgot your password?
@@ -89,6 +89,6 @@ const submit = () => {
             </form>
 
         </AuthenticationCard>
-        <div>slide show</div>
+        <div>slides</div>
     </div>
 </template>
