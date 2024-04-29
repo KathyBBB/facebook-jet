@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+[x-cloak] {
+	display: none;
+}
+
+@layer components {
+	html {
+		@apply antialiased h-full bg-gray-50;
+	}
+
+	body {
+		@apply h-full;
+	}
+	a.active {
+		@apply text-ogred-800;
+	}
+
+	.navbar-icon {
+		@apply relative flex items-center justify-center w-6 h-6 md:h-7 md:w-7 p-0.5 text-white transition-all duration-300 ease-linear bg-blue-900 shadow-lg hover:bg-red-800 hover:rounded-lg rounded-full;
+	}
+
+	.navbar-icon-active {
+		@apply relative flex items-center justify-center w-6 h-6 md:h-7 md:w-7 p-0.5 text-white transition-all duration-300 ease-linear bg-ogred-800 shadow-lg hover:bg-ogblue-800 rounded-lg;
+	}
+
+	.editor-icon {
+		@apply flex items-center justify-center w-6 h-6 p-0.5 text-ogblue-800 hover:text-ogred-800;
+	}
+
+	.editor-input {
+		@apply w-full h-8 px-2 py-1 text-sm text-gray-700 placeholder-gray-600 bg-gray-100 border border-gray-300 rounded-lg appearance-none focus:outline-none focus:ring-1 focus:ring-ogblue-900 focus:border-ogblue-900;
+	}
+
+	.sidebar-icon {
+		@apply relative flex items-center justify-center w-8 h-8 mx-auto mt-2 mb-2 text-white transition-all duration-300 ease-linear bg-blue-900 shadow-lg cursor-pointer hover:bg-red-800 hover:text-white hover:rounded-xl rounded-3xl;
+	}
+
+	.sidebar-icon-active {
+		@apply relative flex items-center justify-center w-8 h-8 mx-auto mt-2 mb-2 text-white transition-all duration-300 ease-linear bg-red-800 shadow-lg cursor-pointer hover:bg-blue-900 hover:text-white hover:rounded-xl rounded-3xl;
+	}
+
+	.pagelink-icon-active {
+		@apply relative flex items-center justify-center w-8 h-8 mx-auto mt-2 mb-2 text-white transition-all duration-300 ease-linear bg-green-700 shadow-lg cursor-pointer hover:bg-red-800 dark:bg-gray-800 hover:text-white hover:rounded-xl rounded-2xl;
+	}
+
+	.sidebar-hr {
+		@apply mx-2 bg-gray-200 border border-gray-200 rounded-full dark:bg-gray-800 dark:border-gray-800;
+	}
+
+	.top-navigation {
+		@apply flex flex-row w-full h-16 m-0 bg-white shadow-lg justify-evenly bg-opacity-90;
+	}
+
+	/* .top-navigation-icon {
+    @apply ml-2 mr-1 text-gray-500 transition duration-300 ease-in-out cursor-pointer md:block hover:text-red-950;
+  }
+  
+  .top-navigation-icon:first {
+    @apply ml-auto mr-2;
+  } */
+}
