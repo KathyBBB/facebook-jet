@@ -17,6 +17,9 @@ defineProps({
         </template>
 
         <div class="max-w-7xl mx-auto w-full grow-0">
+            <div>
+                <h3>Group Page</h3>
+            </div>
             <div v-for="group in groups" class="p-4 flex flex-col gap-4">
                 <div class="font-semibold capitalize">{{ group.name }}</div>
                 <h3 v-if="group.user.length > 0" class="font-semibold underline">Members</h3>
