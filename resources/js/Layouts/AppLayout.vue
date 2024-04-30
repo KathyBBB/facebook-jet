@@ -13,11 +13,11 @@ import { useGeneralStore } from '@/stores/general.js'
 
 const store = useGeneralStore();
 
-store.$subscribe((mutation, state) => {
-    if (mutation.events.key === "issue") {
-        // alert('changed');
-    }
-});
+// store.$subscribe((mutation, state) => {
+//     if (mutation.events.key === "issue") {
+//         // alert('changed');
+//     }
+// });
 
 defineProps({
     title: String,

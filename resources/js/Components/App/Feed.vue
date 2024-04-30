@@ -17,11 +17,11 @@ import { useContentStore } from '@/stores/contents.js'
 //====================
 const store = useGeneralStore();
 
-store.$subscribe((mutation, state) => {
-    if (mutation.events.key === "issue") {
-        // alert('changed');
-    }
-});
+// store.$subscribe((mutation, state) => {
+//     if (mutation.events.key === "issue") {
+//         // alert('changed');
+//     }
+// });
 
 // Use store to get contents
 const props = defineProps(['contents']);
@@ -41,7 +41,7 @@ const props = defineProps(['contents']);
         <div v-if="props.contents">
             <section class="flex flex-col">
                 {{ props.contents.data.length }}
-             
+
                 <div v-for="content in props.contents.data" class="flex justify-center">
 
                     <div class="w-[95%] mx-auto" v-if="content.issue_id === store.issue.id">
@@ -57,7 +57,7 @@ const props = defineProps(['contents']);
                         <div v-if="content.type === 'essay' && store.picked.includes('essays')"
                             class="bg-teal-50 p-4 my-2 rounded-md shadow-md border border-teal-500">
                             <Essay :content="content" />
-                    </div>
+                        </div>
                     </div>
 
                     <!-- <div class="h-[150px] bg-purple-200 w-full">
