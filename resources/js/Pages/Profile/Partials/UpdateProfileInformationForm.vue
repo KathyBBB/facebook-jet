@@ -18,6 +18,7 @@ const form = useForm({
     name: props.user.name,
     email: props.user.email,
     photo: null,
+    birthdate: props.user.birthdate,
 });
 
 const verificationLinkSent = ref(null);
@@ -145,6 +146,12 @@ const clearPhotoFileInput = () => {
                         A new verification link has been sent to your email address.
                     </div>
                 </div>
+            </div>
+            <div class="col-span-6 sm:col-span-4">
+                <InputLabel for="birthdate" value="Birthdate" />
+                <TextInput id="birthdate" v-model="form.birthdate" type="date" class="mt-1 block w-full" required
+                    autocomplete="birthdate" />
+                <InputError :message="form.errors.birthdate" class="mt-2" />
             </div>
         </template>
 

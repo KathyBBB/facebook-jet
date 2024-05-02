@@ -4,7 +4,7 @@ defineProps(['content']);
 
 <template>
     <div>
-        <div class="my-4"> {{ content.id }} - {{ content.type }} - {{ content.issue_id }}</div>
+        <div class="my-4"> {{ content.id }} - {{ content.type }} - {{ content.issue_id }} {{ content.user.name }}</div>
         <p class="my-4">{{ content.title }}</p>
         <ul>
             <li>Answer 1</li>

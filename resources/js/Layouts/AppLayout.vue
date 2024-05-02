@@ -233,7 +233,7 @@ const logout = () => {
             <!-- Page Content -->
             <div class="flex flex-1 overflow-hidden">
                 <!--   start::Sidebar    -->
-                <aside class="hidden sm:block bg-green-300 w-56 overflow-y-auto">
+                <aside class="hidden sm:block bg-green-300 w-56 overflow-y-auto" v-if="route().current() === 'home'">
                     Sidebar content (I should hide on small screens but still be toggleable)
                 </aside>
                 <!--   end::Sidebar    -->
