@@ -19,6 +19,9 @@ const form = useForm({
     email: props.user.email,
     photo: null,
     birthdate: props.user.birthdate,
+    zipcode_id: props.user.zipcode_id,
+    education: props.user.education,
+    party_affiliation: props.user.party_affiliation,
 });
 
 const verificationLinkSent = ref(null);
@@ -147,11 +150,50 @@ const clearPhotoFileInput = () => {
                     </div>
                 </div>
             </div>
+            <!-- Birthdate -->
             <div class="col-span-6 sm:col-span-4">
                 <InputLabel for="birthdate" value="Birthdate" />
-                <TextInput id="birthdate" v-model="form.birthdate" type="date" class="mt-1 block w-full" required
+                <TextInput id="birthdate" v-model="form.birthdate" type="date" class="mt-1 block w-full"
                     autocomplete="birthdate" />
                 <InputError :message="form.errors.birthdate" class="mt-2" />
+            </div>
+            <!-- Zipcode -->
+            <div class="col-span-6 sm:col-span-4">
+                <InputLabel for="zipcode_id" value="Zipcode" />
+                <TextInput id="zipcode_id" v-model="form.zipcode_id" type="text" class="mt-1 block w-full"
+                    autocomplete="zipcode_id" />
+                <InputError :message="form.errors.zipcode_id" class="mt-2" />
+            </div>
+            <!-- Education -->
+            <div class="col-span-6 sm:col-span-4">
+                <InputLabel for="education" value="Education" />
+
+                <select v-model="form.education" id="education" name="education" autocomplete="education"
+                    class="mt-1 block w-full border-gray-300 focus:border-ogblue-500 focus:ring-ogblue-500 rounded-md shadow-sm">
+                    <option value="High School" :selected="form.education">High School</option>
+                    <option value="Technical/Vocational" :selected="form.education">Technical/Vocational Training
+                    </option>
+                    <option value="Some College" :selected="form.education">Some College</option>
+                    <option value="Associates Degree" :selected="form.education">Associates Degree</option>
+                    <option value="Bachelor Degree" :selected="form.education">Bachelor Degree</option>
+                    <option value="Masters Degree">Masters Degree</option>
+                    <option value="Doctoral Degree">Doctoral Degree</option>
+                    <option value="Other">Other</option>
+                </select>
+
+            </div>
+            <!-- Party Affiliation -->
+            <div class="col-span-6 sm:col-span-4">
+                <InputLabel for="party_affiliation" value="Party Affiliation" />
+
+                <select v-model="form.party_affiliation" id="party_affiliation" name="party_affiliation" autocomplete="party_affiliation"
+                    class="mt-1 block w-full border-gray-300 focus:border-ogblue-500 focus:ring-ogblue-500 rounded-md shadow-sm">
+                    <option value="Democrat" :selected="form.party_affiliation">Democrat</option>
+                    <option value="Independent" :selected="form.party_affiliation">Independent</option>
+                    <option value="Republican" :selected="form.party_affiliation">Republican</option>
+                    <option value="Other" :selected="form.party_affiliation">Other</option>
+                </select>
+
             </div>
         </template>
 

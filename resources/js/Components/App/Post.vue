@@ -5,7 +5,7 @@ defineProps(['content']);
 <template>
     <div>
         <div class="my-4 flex gap-4 items-center"> {{ content.id }} - {{ content.type }} - {{ content.issue_id }}
-            <img :src="content.user.profile_photo_path" :alt="content.user.name" class="h-8 w-8 rounded-full bg-white m-1">
+            <img :src="content.user.profile_photo_path" :alt="content.user.name" class="h-8 w-8 rounded-full bg-white m-1 object-contain">
             {{ content.user.name }}
         </div>
 
