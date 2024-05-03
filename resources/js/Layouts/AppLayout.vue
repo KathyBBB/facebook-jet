@@ -3,7 +3,7 @@ import { ref } from 'vue';
 import { Head, Link, router } from '@inertiajs/vue3';
 import Subheader from '@/Components/App/Subheader.vue';
 import Overview from '@/Components/App/Overview.vue';
-import { HomeIcon, UserGroupIcon } from '@heroicons/vue/20/solid';
+import { DocumentChartBarIcon, HomeIcon, UserGroupIcon } from '@heroicons/vue/20/solid';
 import ApplicationMark from '@/Components/ApplicationMark.vue';
 import Banner from '@/Components/Banner.vue';
 import Dropdown from '@/Components/Dropdown.vue';
@@ -78,6 +78,9 @@ const logout = () => {
                                 </NavLink>
                                 <NavLink :href="route('groups.index')" :active="route().current('groups.index')">
                                     <UserGroupIcon class="h-5 w-5 sm:h-6 sm:w-6" />
+                                </NavLink>
+                                <NavLink :href="route('polls.index')" :active="route().current('polls.index')">
+                                    <DocumentChartBarIcon class="h-5 w-5 sm:h-6 sm:w-6" />
                                 </NavLink>
 
                             </div>
@@ -228,12 +231,12 @@ const logout = () => {
 
 
             </nav>
-            <Subheader v-if="route().current() === 'home' || route().current() === 'create.index'" />
+            <Subheader v-if="route().current() === 'home' || route().current() === 'polls.index' || route().current() === 'create.index'" />
 
             <!-- Page Content -->
             <div class="flex flex-1 overflow-hidden">
                 <!--   start::Sidebar    -->
-                <aside class="hidden sm:block bg-green-300 w-56 overflow-y-auto" v-if="route().current() === 'home'">
+                <aside class="hidden sm:block bg-green-300 w-56 overflow-y-auto" v-if="route().current() === 'home' || route().current() === 'polls.index'">
                     Sidebar content (I should hide on small screens but still be toggleable)
                 </aside>
                 <!--   end::Sidebar    -->

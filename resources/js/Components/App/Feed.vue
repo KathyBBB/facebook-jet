@@ -60,11 +60,6 @@ const props = defineProps(['contents']);
                         </div>
                     </div>
 
-                    <!-- <div class="h-[150px] bg-purple-200 w-full">
-                        <div v-if="content.type = 'essay'">
-                            <div> {{ content.id }}</div>
-                        </div>
-                    </div> -->
                 </div>
             </section>
         </div>
