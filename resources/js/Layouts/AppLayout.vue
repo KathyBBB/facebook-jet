@@ -231,12 +231,14 @@ const logout = () => {
 
 
             </nav>
-            <Subheader v-if="route().current() === 'home' || route().current() === 'polls.index' || route().current() === 'create.index'" />
+            <Subheader
+                v-if="route().current() === 'home' || route().current() === 'polls.index' || route().current() === 'create.index'" />
 
             <!-- Page Content -->
             <div class="flex flex-1 overflow-hidden">
                 <!--   start::Sidebar    -->
-                <aside class="hidden sm:block bg-green-300 w-56 overflow-y-auto" v-if="route().current() === 'home' || route().current() === 'polls.index'">
+                <aside class="hidden sm:block bg-green-300 w-56 overflow-y-auto"
+                    v-if="route().current() === 'home' || route().current() === 'polls.index'">
                     Sidebar content (I should hide on small screens but still be toggleable)
                 </aside>
                 <!--   end::Sidebar    -->

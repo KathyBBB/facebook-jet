@@ -7,27 +7,16 @@ const props = defineProps({
 <template>
     <Transition name="modal">
         <div v-if="show" class="modal-mask">
-            <div class="modal-container xl:w-[50%] w-[97%]">
+            <div class="modal-container xl:w-[50%] md:w-[70%] w-[97%]">
                 <div class="modal-header">
                     <slot name="header">
-                        <h3 class="font-semibold tracking-widest text-lg">Create New Poll</h3>
-                        <h6 class="font-semibold">for {{ store.issue.title }}</h6>
+                        <h3>Default Header</h3>
                     </slot>
                 </div>
 
                 <div class="modal-body">
                     <slot name="body">
-                        <form action="">
-                            <div>
-                                <label for="title"
-                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">First
-                                    name</label>
-                                <input type="text" id="title"
-                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                    placeholder="Poll Title" required />
-
-                            </div>
-                        </form>
+                        <p>default body</p>
                     </slot>
                 </div>
 
