@@ -6,7 +6,7 @@ const props = defineProps({
 
 <template>
     <Transition name="modal">
-        <div v-if="show" class="modal-mask">
+        <div v-if="show" class="modal-mask overflow-y-auto">
             <div class="modal-container xl:w-[50%] md:w-[70%] w-[97%]">
                 <div class="modal-header">
                     <slot name="header">

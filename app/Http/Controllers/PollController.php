@@ -5,17 +5,21 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Content;
 use App\Http\Resources\ContentResource;
+use App\Models\Answer;
+use Illuminate\Http\RedirectResponse;
 use Inertia\Inertia;
+use Illuminate\Support\Traits\Dumpable;
 
 class PollController extends Controller
 {
+    use Dumpable;
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
         return Inertia::render('Polls/Index', [
-            'contents' => ContentResource::collection(Content::with('user:id,name,profile_photo_path')->with('issue:id,title')->where('type', '=', 'poll')->latest()->get()),
+            'contents' => ContentResource::collection(Content::where('type', '=', 'poll')->orderByDesc('id')->get()),
         ]);
     }
 
@@ -30,9 +34,35 @@ class PollController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request): RedirectResponse
     {
-        //
+
+        $validated = $request->validate([
+            'title' => 'required|string|max:255',
+            'newAnswers' => 'required|array|min:4',
+            'issue' => 'required|integer|exists:issues,id',
+        ]);
+
+        // dd($request->all());
+
+        $query = Content::insertGetId([
+            'title' => $validated['title'],
+            'type' => 'poll',
+            'issue_id' => $validated['issue'],
+            'user_id' => auth()->id(),
+        ]);
+
+        $ind = 0;
+        foreach ($validated['newAnswers'] as $answer) {
+            $ind = $ind + 1;
+            Answer::create([
+                'content_id' => $query,
+                'answer' => $answer['answer'],
+                'orderId' => $answer['order_id'],
+            ]);
+        }
+
+        return redirect(route('polls.index'));
     }
 
     /**

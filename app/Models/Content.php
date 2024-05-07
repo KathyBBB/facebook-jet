@@ -4,10 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\Sluggable\HasSlug;
+use Spatie\Sluggable\SlugOptions;
 
 class Content extends Model
 {
     use HasFactory;
+    use HasSlug;
 
     /**
      * The attributes that are mass assignable.
@@ -24,6 +27,15 @@ class Content extends Model
         'issue_id',
     ];
 
+    public function getSlugOptions(): SlugOptions
+    {
+        if ($this->type === 'poll') {
+            return SlugOptions::create()
+                ->generateSlugsFrom('title')
+                ->saveSlugsTo('slug');
+        }
+    }
+
     /**
      * Get the user that owns the content.
      */
@@ -39,5 +51,13 @@ class Content extends Model
     public function issue()
     {
         return $this->belongsTo(Issue::class);
+    }
+
+    /**
+     * Get the answers for the content.
+     */
+    public function answers()
+    {
+        return $this->hasMany(Answer::class, 'content_id');
     }
 }

@@ -40,7 +40,7 @@ const props = defineProps(['contents']);
         </section>
         <div v-if="props.contents">
             <section class="flex flex-col">
-                {{ props.contents.data.length }}
+                {{ props.contents.data.length }} {{ store.issue.title }}
 
                 <div v-for="content in props.contents.data" class="flex justify-center">
 
