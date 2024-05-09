@@ -26,7 +26,10 @@ class ContentResource extends JsonResource
             'user' => new UserResource($this->user),
             'issue' => $this->issue,
             'answers' => $this->answers->count() > 0 ? AnswerResource::collection($this->answers) : [],
-            
+            'created_at' => $this->created_at->format('m-d-Y'),
+
+            'updated_at' => $this->updated_at,
+
         ];
     }
 }

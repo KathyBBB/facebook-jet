@@ -29,11 +29,10 @@ class Content extends Model
 
     public function getSlugOptions(): SlugOptions
     {
-        if ($this->type === 'poll') {
-            return SlugOptions::create()
-                ->generateSlugsFrom('title')
-                ->saveSlugsTo('slug');
-        }
+
+        return SlugOptions::create()
+            ->generateSlugsFrom(['title', substr('descripton', 50)])
+            ->saveSlugsTo('slug');
     }
 
     /**

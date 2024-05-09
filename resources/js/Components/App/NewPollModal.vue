@@ -1,4 +1,5 @@
 <script setup>
+import { XCircleIcon } from '@heroicons/vue/24/solid';
 const props = defineProps({
     show: Boolean
 })
@@ -7,7 +8,7 @@ const props = defineProps({
 <template>
     <Transition name="modal">
         <div v-if="show" class="modal-mask overflow-y-auto">
-            <div class="modal-container xl:w-[50%] md:w-[70%] w-[97%]">
+            <div class="modal-container xl:w-[50%] md:w-[70%] w-[97%] h-auto">
                 <div class="modal-header">
                     <slot name="header">
                         <h3>Default Header</h3>
@@ -20,10 +21,15 @@ const props = defineProps({
                     </slot>
                 </div>
 
-                <div class="modal-footer">
+                <div class="modal-footer ">
                     <slot name="footer">
-                        default footer
-                        <button class="modal-default-button" @click="$emit('close')">OK</button>
+                        <div class="flex justify-end text-center items-center">
+                            <button class="bg-red-800 py-2 px-2 text-white rounded-full"
+                                @click="$emit('close')">
+                                <XCircleIcon class="h-5 w-5" />
+                            </button>
+                        </div>
+
                     </slot>
                 </div>
             </div>

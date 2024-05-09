@@ -51,7 +51,7 @@ const props = defineProps(['contents']);
 
                         </div>
                         <div v-if="content.type === 'poll' && store.picked.includes('polls')"
-                            class="bg-lime-50 p-4 my-2 rounded-md shadow-md border border-lime-500">
+                            class="bg-lime-100/10 p-4 my-2 rounded-md shadow-md border border-lime-500">
                             <Poll :content="content" />
                         </div>
                         <div v-if="content.type === 'essay' && store.picked.includes('essays')"

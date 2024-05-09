@@ -26,7 +26,7 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('111788Kb'),
         ]);
 
-        \App\Models\User::factory(1000)->withPersonalTeam()->create();
+        // \App\Models\User::factory(1000)->withPersonalTeam()->create();
 
         // User::factory()->withPersonalTeam()->create([
         //     'name' => 'Test User',
@@ -36,5 +36,6 @@ class DatabaseSeeder extends Seeder
         \App\Models\Issue::factory(55)->create();
         \App\Models\Content::factory(1500)->create();
         \App\Models\Group::factory(10)->create();
+       
     }
 }

@@ -17,7 +17,7 @@ return new class extends Migration
                 ->constrained()
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
-            $table->integer('order_id');
+            $table->integer('orderId');
             $table->string('answer');
             $table->timestamps();
         });
