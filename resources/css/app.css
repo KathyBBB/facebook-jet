@@ -19,11 +19,19 @@
 	}
 
 	.navbar-icon {
-		@apply relative flex items-center justify-center w-6 h-6 md:h-7 md:w-7 p-0.5 text-white transition-all duration-300 ease-linear bg-blue-900 shadow-lg hover:bg-red-800 hover:rounded-lg rounded-full;
+		@apply flex items-center justify-center w-6 h-6 md:h-7 md:w-7 p-0.5 text-white transition-all duration-300 ease-linear bg-blue-900 shadow-lg hover:bg-red-800 hover:rounded-lg rounded-full;
 	}
 
 	.navbar-icon-active {
-		@apply relative flex items-center justify-center w-6 h-6 md:h-7 md:w-7 p-0.5 text-white transition-all duration-300 ease-linear bg-ogred-800 shadow-lg hover:bg-ogblue-800 rounded-lg;
+		@apply flex items-center justify-center w-6 h-6 md:h-7 md:w-7 p-0.5 text-white transition-all duration-300 ease-linear bg-ogred-800 shadow-lg hover:bg-ogblue-800 rounded-lg;
+	}
+
+	.active-link {
+		@apply text-ogred-800;
+	}
+
+	.exact-active-link {
+		@apply text-ogred-800;
 	}
 
 	.editor-icon {

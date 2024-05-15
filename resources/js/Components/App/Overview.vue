@@ -83,7 +83,7 @@ const setCreate = watch(() => create.value, () => {
         </ul> -->
 
         <ul v-if="route().current() === 'home'"
-            class="items-center w-full md:w-1/2 text-xs font-medium text-gray-900 bg-white border border-gray-200 rounded-lg flex dark:bg-gray-700 dark:border-gray-600 dark:text-white text-center gap-4 mx-auto">
+            class="px-2 items-center w-full md:w-1/2 text-xs font-medium text-gray-900 bg-white border border-gray-200 rounded-lg flex dark:bg-gray-700 dark:border-gray-600 dark:text-white text-center gap-4 mx-auto">
             <li class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600">
                 <div class="flex items-center justify-center">
                     <input v-model="picked" id="vue-checkbox-list" type="checkbox" value="essays" name="list-radio"
@@ -101,7 +101,7 @@ const setCreate = watch(() => create.value, () => {
                     </label>
                 </div>
             </li>
-            <li class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600">
+            <li class="w-full border-b border-gray-200 sm:border-b-0 dark:border-gray-600">
                 <div class="flex items-center ps-3">
                     <input v-model="picked" id="vue-checkbox-list" type="checkbox" value="posts"
                         class="text-purple-500 bg-gray-100 border-gray-300 rounded focus:ring-purple-500 dark:focus:ring-purple-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">

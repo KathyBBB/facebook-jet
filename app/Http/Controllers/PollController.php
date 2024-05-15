@@ -5,10 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Content;
 use App\Http\Resources\ContentResource;
+use App\Http\Resources\UsersAnswersResource;
+use App\Http\Resources\AnswerResource;
 use App\Models\Answer;
+use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Inertia\Inertia;
 use Illuminate\Support\Traits\Dumpable;
+use Illuminate\Support\Facades\DB;
 
 class PollController extends Controller
 {
@@ -20,6 +24,8 @@ class PollController extends Controller
     {
         return Inertia::render('Polls/Index', [
             'contents' => ContentResource::collection(Content::where('type', '=', 'poll')->orderByDesc('id')->get()),
+            'useranswers' => UsersAnswersResource::collection(DB::table('useranswer')->join('users', 'useranswer.user_id', '=', 'users.id')->join('answers', 'useranswer.answer_id', '=', 'answers.id')->select('answers.id', 'answers.answer', 'users.name')->get()),
+            //'useranswercount' => UsersAnswersResource::collection(DB::table('useranswer')->join('users', 'useranswer.user_id', '=', 'users.id')->join('answers', 'useranswer.answer_id', '=', 'answers.id')->select(DB::raw('count(*) as user_count, answers.id'))->groupBy('answers.id')->get()),
         ]);
     }
 

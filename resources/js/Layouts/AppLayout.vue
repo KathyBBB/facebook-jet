@@ -69,7 +69,7 @@ const logout = () => {
 
                         </div>
 
-                        <div class="flex items-center ms-6">
+                        <div class="flex items-center ms-2">
 
                             <!-- Navigation Links -->
                             <div class="space-x-2 -my-px ms-10 flex">
@@ -81,13 +81,13 @@ const logout = () => {
                                 </NavLink>
                                 <NavLink :href="route('polls.index')" :active="route().current('polls.index')">
                                     <DocumentChartBarIcon class="h-5 w-5 sm:h-6 sm:w-6" />
-                                </NavLink>
+                                </NavLink> 
 
                             </div>
 
                             <div class="hidden sm:block ms-3 relative">
                                 <!-- Teams Dropdown -->
-                                <Dropdown v-if="$page.props.jetstream.hasTeamFeatures" align="right" width="60">
+                                <Dropdown v-if="$page.props.jetstream.hasTeamFeatures" align="right" width="0">
                                     <template #trigger>
                                         <span class="inline-flex rounded-md">
                                             <button type="button"
@@ -161,7 +161,7 @@ const logout = () => {
                                     <template #trigger>
                                         <button v-if="$page.props.jetstream.managesProfilePhotos"
                                             class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition">
-                                            <img class="h-8 w-8 rounded-full object-cover"
+                                            <img class="rounded-full object-cover min-w-8 max-w-9"
                                                 :src="$page.props.auth.user.profile_photo_url"
                                                 :alt="$page.props.auth.user.name">
                                         </button>

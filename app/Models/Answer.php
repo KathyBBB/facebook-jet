@@ -11,8 +11,8 @@ class Answer extends Model
 
     protected $fillable = ['content_id', 'answer', 'orderId'];
 
-    public function content()
+    public function users()
     {
-        return $this->belongsTo(Content::class, 'content_id');
+        return $this->$this->belongsTo(User::class);
     }
 }

@@ -14,10 +14,10 @@ class ContentController extends Controller
      */
     public function index()
     {
-       
+
         return Inertia::render('Home', [
-           // 'contents' => Content::with('user:id,name,profile_photo_path')->with('issue:id,title')->where('issue_id', 20)->latest()->get(),
-            'contents' => ContentResource::collection(Content::with('user:id,name,profile_photo_path')->with('issue:id,title')->latest()->get()),
+            // 'contents' => Content::with('user:id,name,profile_photo_path')->with('issue:id,title')->where('issue_id', 20)->latest()->get(),
+            'contents' => ContentResource::collection(Content::with('user:id,name,profile_photo_path')->with('issue:id,title')->latest()->limit(300)->get()),
         ]);
     }
 

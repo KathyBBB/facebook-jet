@@ -46,6 +46,11 @@ const closeModal = () => {
     form.reset();
     showModal.value = false;
 };
+
+// use this function in a component to fetch data from the server
+// async function myPost() { 
+//   const post = await fetch(`/api/post/1`).then((r) => r.json());
+// }
 </script>
 
 <template>

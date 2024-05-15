@@ -1,5 +1,5 @@
 import { defineConfig } from "vite";
-import { visualizer } from 'rollup-plugin-visualizer';
+import { visualizer } from "rollup-plugin-visualizer";
 import laravel from "laravel-vite-plugin";
 import vue from "@vitejs/plugin-vue";
 
@@ -17,14 +17,14 @@ export default defineConfig({
 				},
 			},
 		}),
-        visualizer({
+		visualizer({
 			emitFile: true,
-			filename: 'stats.html'
+			filename: "stats.html",
 		}),
 	],
-    optimizeDeps: {},
+	optimizeDeps: {},
 	build: {
-		chunkSizeWarningLimit: 2000,
+		chunkSizeWarningLimit: 800,
 		rollupOptions: {
 			output: {
 				manualChunks: (id) => {

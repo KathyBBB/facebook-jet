@@ -57,6 +57,6 @@ class Content extends Model
      */
     public function answers()
     {
-        return $this->hasMany(Answer::class, 'content_id');
+        return $this->hasMany(Answer::class);
     }
 }

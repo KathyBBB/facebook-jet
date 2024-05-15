@@ -32,7 +32,7 @@ const picked = ref(null);
                 </li>
 
             </ul>
-            <span>{{ picked }}</span>
+            <span>{{ picked }} {{ content.id }} {{ $page.props.auth.user.id }}</span>
         </div>
     </div>
 </template>
